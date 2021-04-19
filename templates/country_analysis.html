@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>天气数据分析</title>
+    <link rel="stylesheet" href="../static/css/style.css">
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        /* navbar start */
+        .navbar {
+            width: 100%;
+            height: 80px;
+            background-color: black;
+            float: left;
+            position: fixed;
+            top: 0;
+        }
+
+        .navbar h1 {
+            font-family: Charter;
+            line-height: 80px;
+            margin-left: 10px;
+            float: left;
+        }
+
+        .navbar h1 a {
+            text-decoration: none;
+            color: white;
+        }
+
+        .navbar-text {
+            overflow: hidden;
+            -webkit-animation: 10s rowup linear infinite normal;
+            animation: 10s rowup linear infinite normal;
+            line-height: 80px;
+            font-size: 34px;
+            color: darkgrey;
+        }
+
+        @keyframes rowup {
+            0% {
+                -webkit-transform: translateX(0px);
+                transform: translateX(0px);
+            }
+            100% {
+                -webkit-transform: translateX(100%);
+                transform: translateX(100%);
+            }
+        }
+
+        /* navbar end */
+
+        /* banner start */
+        .banner {
+            margin-top: 80px;
+            background: url("../static/images/joker_bg2.jpg") no-repeat;
+            height: 922px;
+            width: 100%;
+            overflow: hidden;
+            background-size: 100% 100%;
+        }
+
+
+        /* 设置内容页面 start */
+        .container {
+            width: 1500px;
+            height: 100%;
+            /*background-color: red;*/
+            margin: 0 auto;
+            margin-top: 100px;
+        }
+
+
+        /* menu start */
+        .menu {
+            width: 170px;
+            height: 100%;
+            /*background-color: black;*/
+            color: white;
+            font-size: 24px;
+            float: left;
+        }
+
+        .menu-item {
+            width: 150px;
+            height: 60px;
+            margin-bottom: 10px;
+            text-align: center;
+            line-height: 60px;
+            border-radius: 15px;
+            background-color: black;
+        }
+        .menu-item a {
+            color: white;
+            text-decoration: none;
+        }
+
+        .active {
+            background-color: darkgray;
+
+        }
+
+        /* content start */
+        .content {
+            float: right;
+            width: 1200px;
+            height: 922px;
+            /*background-color: red;*/
+            border: 3px solid black;
+            border-radius: 10px;
+            margin: 0 auto;
+            overflow: auto;
+        }
+        .title {
+            font-weight: bold;
+            font-size: 36px;
+            text-align: center;
+            margin: 20px 0 20px 0;
+        }
+        .content-container {
+            width: 100%;
+        }
+        .content-container-item {
+            width: 90%;
+            margin: 0 auto;
+        }
+        .text {
+            font-size: 24px;
+            font-weight: bold;
+            margin: 20px;
+        }
+    </style>
+</head>
+<body>
+<div class="navbar" id="navbar">
+    <h1><a href="/">JOKER_JACKSON</a></h1>
+    <div class="navbar-text">
+        <span>欢迎来到小丑的世界</span>
+    </div>
+</div>
+{#<div class="banner"></div>#}
+<div class="container">
+    <div class="menu" id="menu">
+        <div class="menu-item"><a href="/">新 闻</a></div>
+        <div class="menu-item"><a href="/data">天 气 数 据</a></div>
+        <div class="menu-item active" style="width: 200px"><a href="/country_analysis">全国空气质量分析</a></div>
+        <div class="menu-item" style="width: 200px"><a href="/province_analysis">全省空气质量分析</a></div>
+        <div class="menu-item" style="width: 200px"><a href="/city_analysis">全市空气质量分析</a></div>
+    </div>
+    <div class="content">
+        <div class="title">
+            全 国 空 气 质 量 分 析
+        </div>
+        <div class="content-container">
+            <div class="content-container-item">
+                <div class="text">一、2013~2018空气质量对比图</div>
+                <img style="width: 100%" src="../static/analysis/country/bar-country.jpeg" alt="">
+            </div>
+            <div class="content-container-item">
+                <div class="text">二、全国空气质量年变化</div>
+                <img style="width: 100%" src="../static/analysis/country/changes-country.jpeg" alt="">
+            </div>
+            <div class="content-container-item">
+                <div class="text">三、空气质量与污染物相关程度</div>
+                <img style="width: 100%" src="../static/analysis/country/corr-country.jpeg" alt="">
+            </div>
+            <div class="content-container-item">
+                <div class="text">四、空气质量最差的10个省份</div>
+                <img style="width: 100%" src="../static/analysis/country/end-5-province.jpeg" alt="">
+            </div>
+            <div class="content-container-item">
+                <div class="text">五、空气质量最差的10个省份</div>
+                <img style="width: 100%" src="../static/analysis/country/end-5-province.jpeg" alt="">
+            </div>
+            <div class="content-container-item">
+                <div class="text">六、空气质量十佳省份</div>
+                <img style="width: 100%" src="../static/analysis/country/top-5-province.jpeg" alt="">
+            </div>
+            <div class="content-container-item">
+                <div class="text">七、空气质量十佳城市</div>
+                <img style="width: 100%" src="../static/analysis/country/top-5-city.jpeg" alt="">
+            </div>
+            <div class="content-container-item">
+                <div class="text">七、2013年-2018年全国整体空气质量如何变化</div>
+                <img style="width: 100%" src="../static/analysis/country/line-country.jpeg" alt="">
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

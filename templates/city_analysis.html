@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>天气数据分析</title>
+    <link rel="stylesheet" href="../static/css/style.css">
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        /* navbar start */
+        .navbar {
+            width: 100%;
+            height: 80px;
+            background-color: black;
+            float: left;
+            position: fixed;
+            top: 0;
+        }
+
+        .navbar h1 {
+            font-family: Charter;
+            line-height: 80px;
+            margin-left: 10px;
+            float: left;
+        }
+
+        .navbar h1 a {
+            text-decoration: none;
+            color: white;
+        }
+
+        .navbar-text {
+            overflow: hidden;
+            -webkit-animation: 10s rowup linear infinite normal;
+            animation: 10s rowup linear infinite normal;
+            line-height: 80px;
+            font-size: 34px;
+            color: darkgrey;
+        }
+
+        @keyframes rowup {
+            0% {
+                -webkit-transform: translateX(0px);
+                transform: translateX(0px);
+            }
+            100% {
+                -webkit-transform: translateX(100%);
+                transform: translateX(100%);
+            }
+        }
+
+        /* navbar end */
+
+        /* banner start */
+        .banner {
+            margin-top: 80px;
+            background: url("../static/images/joker_bg2.jpg") no-repeat;
+            height: 922px;
+            width: 100%;
+            overflow: hidden;
+            background-size: 100% 100%;
+        }
+
+
+        /* 设置内容页面 start */
+        .container {
+            width: 1500px;
+            height: 100%;
+            /*background-color: red;*/
+            margin: 0 auto;
+            margin-top: 100px;
+        }
+
+
+        /* menu start */
+        .menu {
+            width: 170px;
+            height: 100%;
+            /*background-color: black;*/
+            color: white;
+            font-size: 24px;
+            float: left;
+        }
+
+        .menu-item {
+            width: 150px;
+            height: 60px;
+            margin-bottom: 10px;
+            text-align: center;
+            line-height: 60px;
+            border-radius: 15px;
+            background-color: black;
+        }
+        .menu-item a {
+            color: white;
+            text-decoration: none;
+        }
+
+        .active {
+            background-color: darkgray;
+
+        }
+
+        /* content start */
+        .content {
+            float: right;
+            width: 1200px;
+            height: 922px;
+            /*background-color: red;*/
+            border: 3px solid black;
+            border-radius: 10px;
+            overflow: auto;
+        }
+        .form-container {
+            width: 1000px;
+            height: 100px;
+            margin: 0 auto;
+        }
+        .item {
+            width: 200px;
+            height: 50px;
+            float: left;
+            margin: 30px;
+        }
+        .item input {
+            border: 2px solid sienna;
+            height: 30px;
+            border-radius: 10px;
+            padding-left: 5px;
+        }
+        .text-container {
+            width: 100%;
+        }
+        .text-container .title {
+            width: 500px;
+            height: 30px;
+            text-align: center;
+            margin: 0 auto;
+            font-size: 24px;
+            font-weight: bold;
+        }
+        table {
+            width: 90%;
+            border: 3px solid black;
+            margin: 0 auto;
+            margin-top: 50px;
+
+            border-radius: 10px;
+        }
+        table td {
+            width: 100px;
+            height: 50px;
+            border: 1px solid #CCFFFF;
+            text-align: center;
+        }
+        table tr:nth-child(odd){
+            background-color: #FFFF99;
+        }
+        table tr:nth-child(even){
+            background-color: #CCFF66;
+        }
+    </style>
+</head>
+<body>
+<div class="navbar" id="navbar">
+    <h1><a href="/">JOKER_JACKSON</a></h1>
+    <div class="navbar-text">
+        <span>欢迎来到小丑的世界</span>
+    </div>
+</div>
+{#<div class="banner"></div>#}
+<div class="container">
+    <div class="menu" id="menu">
+        <div class="menu-item"><a href="/">新 闻</a></div>
+        <div class="menu-item"><a href="/data">天 气 数 据</a></div>
+        <div class="menu-item" style="width: 200px"><a href="/country_analysis">全国空气质量分析</a></div>
+        <div class="menu-item" style="width: 200px"><a href="/province_analysis">全省空气质量分析</a></div>
+        <div class="menu-item" style="width: 200px"><a href="/city_analysis">全市空气质量分析</a></div>
+    </div>
+    <div class="content">
+        <div class="form-container">
+            <form action="/AQI_analysis" method="post">
+                <div class="item">
+                    查询城市:
+                    <input type="text" name="city" placeholder="输入城市..." required>
+                </div>
+                <input style="margin-top: 30px; height: 30px; width: 50px; border-radius: 5px" type="submit" value="查询">
+            </form>
+        </div>
+    </div>
+</div>
+</body>
+</html>
